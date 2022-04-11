@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetacion Master en FrameWork JavaScript</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        window.addEventListener("load", function(event) {
+            var template = document.getElementById("article-template");
+            var articles = document.getElementById("articles");
+            for (var i = 1; i <= 5; i++) {
+                var clonado = template.cloneNode(true);
+                clonado.removeAttribute("id");
+                var h2 = clonado.getElementsByTagName("h2")[0];
+                h2.innerHTML = h2.textContent + ' ' + i;
+                articles.appendChild(clonado);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="center">
+            <!-- LOGO -->
+            <div id="logo">
+                <img src="images/react.svg" class="app-logo" alt="Logotipo">
+                <span id="brand">
+                    <strong>Curso</strong>React
+                </span>
+            </div>
+            <!-- MENU DE NAVEGACION -->
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="formulario.html">Formulario</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 2</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Limpiar Flotados -->
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <div id="slider" class="slider-big">
+        <h1>
+            Binevenido al Curso de React Esteban Valenzuela Castro
+        </h1>
+        <a href="blog.html" class="btn-white">Ir al Blog</a>
+    </div>
+
+    <div class="center">
+        <section id="content">
+            <h2 class="subheader">
+                Ultimos Articulos
+            </h2>
+
+            <!-- listado de articulos -->
+            <div id="articles">
+                <article class="article-item" id="article-template">
+                    <div class="image-wrap">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUWFRUVFRUVFRcVFRUVFRUWFhUVFhUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFRAQGC0dHR0rLS0tKy0tLSsrKy0tLS0tLS0tLSstLS0tLS0tLSstLS0tLS0tLS0tLS0tLSstLS0rK//AABEIALkBEAMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAADBAECBQAGBwj/xAA4EAACAQIEBAIHCAICAwAAAAAAAQIDEQQSITEFE0FRYZEGFCJScYGhFTJCscHR4fAH8WJyI2OC/8QAGQEBAQEBAQEAAAAAAAAAAAAAAQACAwQF/8QAIBEBAQEAAgIDAQEBAAAAAAAAAAERAhIDIRMxUUFhBP/aAAwDAQACEQMRAD8A9+onZQ/LJyH0Oz5eFnA7IM5DuWXZYXUCcgxkJyB2WF8hVwGchDgWrC+QjIM5DnAeywtkIcRnIVylqwvkIcBhxIyDqwvlOcQ+QhwLVhdxIyjGQjIOjC+U7KHyHZB1YBlIyjGQjKWrAMh2QNlJyFqwBIiSD5DshaiziDcRqUSmQdRfIdlGMh2QtQCgWUA6gZHGuO0sOrXU6nSCe3/Z/h/MdWa0lEVxHEaFP79WnHwclfyPn3FOO1qz9qbUfcjpFfLr87mRNmbydJ4v1+gshDgePpcVr/jqyjFeCd/C71YxQ4zUSbc5Xu3ZxTSiur/g8Xyxr469PkOyGLQ4/K6TgpPrbR2XXt1Q9DjlBu15L4x/Y1PJKLwsOZCcoShKM1eLuv70COmPYYVyHOAzkIcC7LC+Q5wGHArlHVgGQrkGMp2UuywtkIcBlxOyj2WFch2QZcSMo9hhbIVyDTgRkLssLZCMg1kIyD2WFuWVcBtwI5ZdlhVUycgzyzuWPZYW5ZzpjKgc4F2WE5UynLG5QKOAyrC2UT4pxKlh45qktekVrKXwX6g+P8Yhh423qNezHe3aUvC588xuJlUk5zbbbu2/7ovA1pnHWzj/AEzquLVOEYX/ABXcpL4dPoeQr12223dvVt73YzNidV30C114yRTmXIlUKuFikkY1p9MlPM9bN2Wj8dP0+gx6vJx1V9b+zbM/Dt/oVcWnZ9/otbq3kdTqtWal0f8Av8/M8Fl/hhrD1Gnns0k2m2knvr89jqNOrUn91a/dT6Lxb121EpzeiT0azXTvZtW27W/IvDE2cbSyuL1vez1Vvy+o4jWJm4z9qTbVktdnurN9B7C8aqwtklmj2lr4vxRn4rExerd7rbs7738kO+qxkuye1uny6/yZvPIeut/C+kFOX31l1tdNNfFrdfK5r02pK8Wmn1R4d4RxWjTVuq89VsDwHGJUZXi1/wAo7xlt/bmuPl1nlwx73IQ4CvB+L08QrL2ZreL+WqfVamllOusYWynZA7idlHVhbIdlGMpGUtGF8p2UO4kZR1YBlIyh8pGUdGA5CMoexFi1YDlOUA+U8R/kX0mnQth6Mss5RvUkt4QeiUX0k9fgrdxnurHo8RxbDQbjPEUYyj96LqRUl8Ve4vhvSHCVJ8uFaLk9tGk/hJqzPjNOg5u7v+t+7uN0MO1bXY6dDj7TOvTUsjnHN7uZZvLcuz5VQr5db697jmM45VqwUJTdkrO2mbZ+132NfGy9pjePYamnmqxbSbtF5m7dNOup4zjXppOpeFJcuD0b/G1az16fI8/iZaiVWD3HMakErYlvdt/F3dl0ASrC9R+GoCo2HZvB6lcE6oDKyFCXQNOCyn5kxgRSg1uHUkgT6NjMllJu0lo+t1fb8/MycRj2lZLz+f8AHkRXqOQpVYzwSfftz7olxKfRLf8Ahr4dRfFcUnZJLK1+Jbv49yXuEnhE0PxcPxdgKPGalrPLL4rUifHa6TUarSev+uxWthopXFZpGfi4/jXY5h/SHFJp81yt0lqn8S2J45Uk5ZYxjfdJddm12M6wLJZl8XDdw7WnhePV4SUlPVbPZ+a18D2fCP8AJco2jiKeZX1lHdL4de584CpLroxvj43+B+guFcWoYmOejUjNdUtJL/tF6r5juU/PWAx9SjPmUZyhJK14u2/R914H0H0Z/wAjXap4xJbJVo7X/wDZHp8V5HLl4rPoyvodiMpm1fSTCJZufGSeiyXnd2vZZU9bFsFx/D1ZZIz9p7KStf4PY4nD+UjKGynZS1dQHE7KHyEZC0daBlOyh8glxfiVHC03VrzUIrTXdvpGK3b8B1dSnpDxSGEw868lfKrRj703pGPnv4Js+D4nGSrVJVKkrznJyl4t6+XSxq+m3phPHTSinGhBvJDu9Upy8bO1umvcwcNFyPRwmRYfp1QkMzDYPDPsaVLAdWdZGLWdlfcNCKNOOGS6IrKml0Q4NZ81HsCqJMcqW62FK2IiiqhStT00QlKOuo1Wx6+ghXx8bM52xuSrz1F2+4rPiF9gM8WY7xvq0HUAzqmXKtZ3R0sQY+Rrq+o1KTbCUcDHqBjjEFjiUfQseQx6pT7FamFj0BOsVddmeq1n43D22MesraG5i5uXQxsTQfiZvGt8aWeh0pFZQfZsFy5djFlbFuRNgW7bso8Qg3DhiEgkaiM54kFLEF3h6tj1yUdFJ2ve13a/e3cp6/L3n5syJ1WwfNYd4ur2XDvTTGUHHJXk1FWUJvPC3bKz3Ho//lSlL2cXDlu6tOmnKH/1H7y+Vz4q6jIjUZz5deX8akx+r8NXhUip05xnFpNOLTTTV09PAJLRNt2S1beyR+WOHcWrUJKdGpKnJa3i2vPvu9Ga/FPTjHYlZa1dyh7iUYRfxUEs3zucfj/1rZ+PqvpV/kWlQvTwyVWdpJzzWhCWyto8/Xw0Wp8oxuJxOKlerVnO1/vNtRvvZdNkZNbG3D4bHW66HXjOMYuueAnmSWv6HocEoU4qNrvqZNLiIT1lS6nWZGLtb0cQlsXjjl3MDmf8iqxyi1ta9jfZnq9J6zdXFMZi0lrJL+2POYrjzcHa28kvhbRmDicZKWrbf+7mOXmk+muPjr0eN4rltZ3vr8rmTjOLtvTun5GVUrN7/wBQDOefl5LXacIfqYpybdwUqjtcVjMtOXsr4v8AT+TneTWLqpqyHMCmTczpwR6q/Uo2dGelirI4+gOt4hI4hoXp4eV9gs8PLsfV14siavEGtmLPi8+5NbBS7CzwMn+F+Rm8q1JxFlxedtxapxefcs+Hyt91+QpU4fU9x+Rz5c+TUnERcWkLzx7ZH2dV9yXkcuG1fcfkYvPnWs4hPFMpzg/2dU9x+RH2bV9x+Ri9q16Lyqg+YNfZlX3GR9l1fcZnKdhZ1Dkxr7Lqv8DJjwyr7jLKthbUi5qR4dVejgDlwqr7v1Q9aO0IOZGZj/2NV936o77Jq9Y/VF1v4u0IJk5xmfC6vu/VFHwyr7v1Qdb+HYpTr27l3izlwup7v5Fvsyp7o5yGxT1ti0qzY1PATX4WRHASv91hZT6Z0pMrJmlLh0uwOfD5dmZvGnYzGykmPzwEuz8gLwUuz8jNlalhZMtN6IYWEl2fkTLCPsHU6VZFw7oMh0X2DFoKZIXkMjlsMOvpigyziwjRZRPqPAWlFgZJ9zQdEG8J4hSQ17sWqKV92azwq7i9TDLuZsplZkptdWUUn3Y/6tHqwU6K6MMrWlW33ZSTkurGJQSBSaMUlua+5Xmvuw0ooGkjPtp3OfcmNWXcq7HZi9o1GrpuVnN9AcJpHcwtGKOrLuW5r7nM5oNKspvuTnZVoLT1KVKuqznVYbKdyrmvYA5rfU5Vmgzw7AVKT/MNp9LesMG8T4gZ33F6sivJYZnimAnin3FakwWcxeTUjQjiXYiWJYkpFqj0Qdlhh1ikqorKZWVUO0OG+YuxyfgJKpoWVQNhx9OTRZTRlTrkwx1tz3a8uNV1CjkIPiMSHxBPYNWUziJ2MyviCmIxbYhVrXM3k1OJqVYEqwpzCHVMXk3h7nMHOoK84rnDssHzEZQSmHw8JTkoRTlJuyS1bDSE4ETiegn6K4lK7pu/ZOMtOuz38CcL6M16klFRce8pRcYr43DRsecyjeCwk6jUYQlOXaKbf0PdYH0GoRs6tSU+8VaMW/jvY9Rw/CUqEctGEYJ72Wr+L3Y9azeceU4Z/j2pKzr1IwTSbjH2p67pt6J+Opo8U/x/Rcb4ebjJdJvNF/NK8fjqekdXxI5niHUdnx7i+BqUJ5KkHF9O0vFPqgWHj1PruOw9OtBwqJSTTWqTavvZ9Ht5HgONeiU6Mc9GTqJbxt7SXddyywzlrITjtcrKXYyp1mM0cWmtdxlaw3mZMGgUaqYSMjQVr4ZOOni/Mx8Xh5LobUpC9eTM8ppleeqwa3/twWU1a1C+rFKmH/M43i6SloILPZFWmiJSM/RCbBvQJc6a0MEJHXJZ2UC95Oi+gjUm0PVa1laLV3u/DqKNrW62/Y7/ADfrj1JzrHetWQWdOO9utvMpOkrWS+fYfmh6gSxTYGVYdjg0lfLf62DUeFwms0rrTZdzny88M4snmEKRs/YlPrKT8v2AV6EL2UFZbWf1b6szPPxv0cZykFgzU4RwJ1pWSaivvSeyX6vTY9vw7g1CivZgpPT2pK7uu3Y78N5/Tny5Ti8xwX0Uq1bSq3p0/H777Wi9vi+x7fhXC6OHVqcbO1nN6zl8X+iLOsQ6x3nGRxvK07zSOcIOsVdc0y0HWI55nOsVdck0nXK88zXXK88k03XKSrma8QVeIIvP+m3CY5fWKas0/wDyJbNP8XxT38H4HjIysfT6tZSTi9U0009mnumfO+M4LkVHHeL1g+8e3xRw8nHPbt47/AoVg1PEvuZ6mTEx2dMaixJWVdCN2Xzj2GDOqDlJAZVEUcw04tOC3AzSOlMFmMWwxDgdY6UiqZlpVRudKJexzDE9Pm/QmEE95W/gBzY2t3/qLRTvqr9uz/k522jBZuN7XdvFaX73KprVN2v+/wDsG2/Lv2/QZeGnUScKba6P89eqKbfUFXxMlFRyu9l36+PxuAWJkl27O27vdmhR4PKSWZ5La9H9F+45R4TTj95ufg9F5I3x8HK/xm85GNRjKTtrLr1b8kbHDuC3earZL3Fu/i1saNOcYq0UkvBWO9YPRw/5pPd9ufLyW/TQhNRVopJLZJWS+R3PM54gG8SelzxpuuUeIMx4ko8QSxqPEFHiDMliCjxBacajxJV4kyniCssQGrGo8SVeJMp4kr6yWnGq8QQ65kvEkPEFqxqSriPE8LCtG0t192S3i3+a8Bd4gr6wF9/ZkxjT9H6qvaUH82m/poTheDVXK07RS63T8rGx6x4nLEHP4+LfakYcHaftSuvDcNieFwkvY9l9un7h3XKuqa6wbWHiuGVI3drr/i7/AEM2TPX84SxuCp1NbWfdfqjlz8f43OX683cHIbxmEdN2e3R91+4rJHCyx0ilzrkHXMtCRkWzAHIlSHRj6HQ4TSiva9t+X5BPs+ivwfV/uQ6xSVY93ThP48u39NU4U4/djFfLUu6xnOqRzfE1Mn0saDrlXXM/mkOsGrD/ADivPEJVijqhpxoOsUdXxEXUKc4tWHpVwbriTqlJVQ09Tsq5V1xCVYjmlp6nHiCHWEVVIlWDscO88q6wlzWVdUOyw7zisqxnSq+JZYgtOHeeRzxN1iOYHZYdVfsQ6r8BFvxKyn4l2WH1V8TnUfcSjOxfmeJdlhpVS3NEuYcpl2WGquWas9V+XwMrE4Vx29pd1v8ANDSrllWRnlJTPTGlEobGJpKa136My69Fx38+jOHLjY6S6EyGySGjDT27rlXWF2Qz6GvNg7qlecCZBnTg3NKuqBZVhqwZ1SvMBHBpwR1SjmUKyDVi7qlXUKMow04u6gOVRkFZlpxDrMjNfqCLxLUtmZEpFHuUqBqWujlJAiEGnB1MhzKohhqXdQrOZVlGWoSM0WcgC3CDqwRTJzlGCp7lqww2QiCYlqxdPxLN+IOOxRiEyw0H08ijwUekmHplg6w7X//Z"
+                            height="200px" alt="Paisaje">
+                    </div>
+                    <h2>
+                        Articulo de Prueba
+                    </h2>
+                    <span class="date">
+                        Hace 5 Minutos
+                    </span>
+                    <a href="#">Leer mas...</a>
+                    <!-- Limpiar Flotados -->
+                    <div class="clearfix"></div>
+                </article>
+            </div>
+        </section>
+
+
+
+        <aside id="sidebar">
+            <div id="nav-blog" class="sidebar-item">
+                <h3>
+                    Puedes Hacer Esto
+                </h3>
+                <a href="#" class="btn btn-sucess">Crear Articulo</a>
+            </div>
+            <div id="search" class="sidebar-item">
+                <h3>
+                    Buscador
+                </h3>
+                <p>
+                    Encuentra el Aerticulo que Buscas
+                </p>
+                <form>
+                    <input type="text" name="search">
+                    <button type="submit" name="submit" class="btn">Buscar</button>
+                </form>
+            </div>
+        </aside>
+        <!-- Limpiar Flotados -->
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="center">
+            <p>
+                &copy; Master Framework para JavaScript de Esteban Valenzuela
+            </p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
